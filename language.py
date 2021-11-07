@@ -17,7 +17,13 @@ Parameters: str
 Returns: 2D list of strs
 '''
 def loadBook(filename):
-    return
+    f = open(filename)
+    r= []
+    a = f.read().splitlines()
+    for i in a:
+        if len(i)>0:
+            r.append(i.split())
+    return r
 
 
 '''
@@ -27,6 +33,7 @@ Parameters: 2D list of strs
 Returns: int
 '''
 def getCorpusLength(corpus):
+    
     return
 
 
@@ -285,10 +292,11 @@ def scatterPlot(xs, ys, labels, title):
 
 # This code runs the test cases to check your work
 if __name__ == "__main__":
-    print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    test.week1Tests()
-    print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
-    test.runWeek1()
+    # print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
+    # test.week1Tests()
+    # print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
+    # test.runWeek1()
+    test.testLoadBook()
 
     ## Uncomment these for Week 2 ##
 """
