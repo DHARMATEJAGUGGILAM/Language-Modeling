@@ -5,6 +5,7 @@ Roll No:
 """
 
 import language_tests as test
+from collections import Counter
 
 project = "Language" # don't edit this
 
@@ -62,7 +63,13 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to ints
 '''
 def countUnigrams(corpus):
-    return
+    my_dict = {}
+    for sublist in corpus:
+        for item in sublist:
+            if item not in my_dict:
+                my_dict[item] = 0
+            my_dict[item] += 1
+    return my_dict
 
 
 '''
@@ -306,7 +313,8 @@ if __name__ == "__main__":
     # test.runWeek1()
     #test.testLoadBook()
     #test.testGetCorpusLength()
-    test.testBuildVocabulary()
+    #test.testBuildVocabulary()
+    test.testCountUnigrams()
 
     ## Uncomment these for Week 2 ##
 """
