@@ -144,8 +144,6 @@ def buildUniformProbs(unigrams):
     return my_dict
 
 
-
-
 '''
 buildUnigramProbs(unigrams, unigramCounts, totalCount)
 #2 [Check6-2]
@@ -153,7 +151,12 @@ Parameters: list of strs ; dict mapping strs to ints ; int
 Returns: list of floats
 '''
 def buildUnigramProbs(unigrams, unigramCounts, totalCount):
-    return
+    x=[]
+    for i in unigrams:
+        y= unigramCounts[i]
+        a=y/totalCount
+        x.append(a)
+    return x
 
 
 '''
@@ -350,7 +353,8 @@ if __name__ == "__main__":
     #test.testGetStartWords()
     #test.testCountStartWords()
     #test. testCountBigrams()
-    test.testBuildUniformProbs()
+    #test.testBuildUniformProbs()
+    test.testBuildUnigramProbs()
 
     ## Uncomment these for Week 2 ##
 """
