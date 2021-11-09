@@ -6,6 +6,10 @@ Roll No:
 
 import language_tests as test
 from collections import Counter
+import numpy
+import matplotlib
+
+
 
 project = "Language" # don't edit this
 
@@ -251,6 +255,12 @@ Parameters: 2D list of strs
 Returns: None
 '''
 def graphTop50Words(corpus):
+    uniqueWords = buildVocabulary(corpus)
+    unigramCounts = countUnigrams(corpus)
+    count = getCorpusLength(corpus)
+    unigramProbs = buildUnigramProbs(uniqueWords,unigramCounts, totalCount=count)
+    top = getTopWords(50,uniqueWords,unigramProbs,ignore)
+    barPlot(top,"Top N words")
     return
 
 
@@ -393,20 +403,19 @@ if __name__ == "__main__":
     #test.testBuildUniformProbs()
     #test.testBuildUnigramProbs()
     #test.testBuildBigramProbs()
-    test.testGetTopWords()
+    #test.testGetTopWords()
     #test.testGenerateTextFromUnigrams()
     #test.testGenerateTextFromBigrams()
 
     ## Uncomment these for Week 2 ##
-"""
+    """
     print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
     test.week2Tests()
     print("\n" + "#"*15 + " WEEK 2 OUTPUT " + "#" * 15 + "\n")
     test.runWeek2()
-"""
+    """
 
     ## Uncomment these for Week 3 ##
-"""
+
     print("\n" + "#"*15 + " WEEK 3 OUTPUT " + "#" * 15 + "\n")
     test.runWeek3()
-"""
