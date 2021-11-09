@@ -393,9 +393,9 @@ if __name__ == "__main__":
     #test.testBuildUniformProbs()
     #test.testBuildUnigramProbs()
     #test.testBuildBigramProbs()
-    #test.testGetTopWords()
+    test.testGetTopWords()
     #test.testGenerateTextFromUnigrams()
-    test.testGenerateTextFromBigrams()
+    #test.testGenerateTextFromBigrams()
 
     ## Uncomment these for Week 2 ##
 """
