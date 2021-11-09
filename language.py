@@ -187,7 +187,16 @@ Parameters: int ; list of strs ; list of floats ; list of strs
 Returns: dict mapping strs to floats
 '''
 def getTopWords(count, words, probs, ignoreList):
-    return
+    g= {}
+    r ={}
+    for i in range(len(words)):
+        if words[i] not in ignoreList:
+            g[words[i]] = probs[i]
+    a= sorted(g,key=g.get,reverse=True)
+    for i in a:
+        if len(r) < count:
+            r[i] = g[i]
+    return r
 
 
 '''
@@ -366,7 +375,8 @@ if __name__ == "__main__":
     #test. testCountBigrams()
     #test.testBuildUniformProbs()
     #test.testBuildUnigramProbs()
-    test.testBuildBigramProbs()
+    #test.testBuildBigramProbs()
+    test.testGetTopWords()
 
     ## Uncomment these for Week 2 ##
 """
